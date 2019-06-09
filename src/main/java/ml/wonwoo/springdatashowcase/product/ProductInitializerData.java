@@ -1,7 +1,7 @@
 package ml.wonwoo.springdatashowcase.product;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
+import static ml.wonwoo.springdatashowcase.support.Currencies.USD;
+
 import ml.wonwoo.springdatashowcase.data.InitializerData;
 import ml.wonwoo.springdatashowcase.product.Book.BookType;
 import ml.wonwoo.springdatashowcase.product.Disc.DiscType;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProductInitializerData implements InitializerData {
-
-    private final CurrencyUnit USD = Monetary.getCurrency("USD");
 
     private final BookCatalog bookCatalog;
     private final DiscCatalog discCatalog;
