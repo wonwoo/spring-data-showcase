@@ -14,9 +14,9 @@ public class ProductInitializerData implements InitializerData {
     private final CurrencyUnit USD = Monetary.getCurrency("USD");
 
     private final BookCatalog bookCatalog;
-    private final Catalog<Disc> discCatalog;
+    private final DiscCatalog discCatalog;
 
-    public ProductInitializerData(BookCatalog bookCatalog, Catalog<Disc> discCatalog) {
+    public ProductInitializerData(BookCatalog bookCatalog, DiscCatalog discCatalog) {
         this.bookCatalog = bookCatalog;
         this.discCatalog = discCatalog;
     }
