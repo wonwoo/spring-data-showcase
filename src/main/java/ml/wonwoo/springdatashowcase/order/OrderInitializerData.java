@@ -12,8 +12,12 @@ public class OrderInitializerData implements InitializerData {
 
     @Override
     public void initialize() {
+
         Order order = orderRepository.save(new Order());
+
         order.orderPaid();
+
         orderRepository.save(order);
+
     }
 }

@@ -24,6 +24,10 @@ public class Order extends AbstractAggregateRoot<Order> {
 
     }
 
+    public String getId() {
+        return identifier.getIdentifier();
+    }
+
     public void orderPaid() {
 
         this.orderStatus = OrderStatus.PAID;
