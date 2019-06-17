@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import ml.wonwoo.springdatashowcase.product.Book.BookType;
 import org.javamoney.moneta.Money;
-import org.springframework.data.web.JsonPath;
 import org.springframework.data.web.ProjectedPayload;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,23 +27,18 @@ public class BookController {
     interface Books {
 
         @NotEmpty
-        @JsonPath("$..name")
         String getName();
 
         @NotEmpty
-        @JsonPath("$..image")
         String getImage();
 
         @NotEmpty
-        @JsonPath("$..author")
         String getAuthor();
 
         @NotNull
-        @JsonPath("$..price")
         BigDecimal getPrice();
 
         @NotNull
-        @JsonPath("$..type")
         BookType getType();
 
         default Book toBook() {
