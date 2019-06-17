@@ -2,6 +2,7 @@ package ml.wonwoo.springdatashowcase.product;
 
 import static ml.wonwoo.springdatashowcase.support.Currencies.USD;
 
+import javax.money.MonetaryAmount;
 import ml.wonwoo.springdatashowcase.data.InitializerData;
 import ml.wonwoo.springdatashowcase.product.Book.BookType;
 import ml.wonwoo.springdatashowcase.product.Disc.DiscType;
@@ -25,10 +26,18 @@ public class ProductInitializerData implements InitializerData {
         bookCatalog.save(new Book("Effective Java", "http://localhost:8080",
             "Joshua Bloch", Money.of(3.99, USD), BookType.SOFTWARE));
 
+        bookCatalog.save(new Book("Effective Java", "http://localhost:8080",
+            "Joshua Bloch", Money.of(8.99, USD), BookType.SOFTWARE));
+
         bookCatalog.save(new Book("Back to the Future", "http://localhost:8080",
             "Michael Klastorin", Money.of(6.99, USD), BookType.FANTASY));
 
         discCatalog.save(new Disc("Back to the Future", "http://localhost:8080",
             "Sci-Fi", Money.of(5.99, USD), DiscType.BLURAY));
+
+        BookStreamable authors = bookCatalog.findByAuthor("Joshua Bloch");
+        MonetaryAmount total = authors.getTotal();
+        System.out.println(total);
+
     }
 }
