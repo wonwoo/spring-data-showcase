@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @PostMapping("/books")
-    public void books(@Valid @RequestBody Books payload) {
+    public void books(@Valid @RequestBody BookPayload payload) {
 
     }
 
     @ProjectedPayload
-    interface Books {
+    interface BookPayload {
 
         @NotEmpty
         String getName();
