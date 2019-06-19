@@ -8,7 +8,7 @@ import ml.wonwoo.springdatashowcase.support.Currencies;
 import org.springframework.data.util.Streamable;
 
 @RequiredArgsConstructor(staticName = "of")
-public class BookStreamable implements Streamable<Book> {
+public class Books implements Streamable<Book> {
 
     private final Streamable<Book> books;
 

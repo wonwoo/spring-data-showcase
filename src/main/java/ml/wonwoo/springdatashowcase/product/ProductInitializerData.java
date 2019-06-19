@@ -35,7 +35,7 @@ public class ProductInitializerData implements InitializerData {
         discCatalog.save(new Disc("Back to the Future", "http://localhost:8080",
             "Sci-Fi", Money.of(5.99, USD), DiscType.BLURAY));
 
-        BookStreamable authors = bookCatalog.findByAuthor("Joshua Bloch");
+        Books authors = bookCatalog.findByAuthor("Joshua Bloch");
         MonetaryAmount total = authors.getTotal();
         System.out.println(total);
 
