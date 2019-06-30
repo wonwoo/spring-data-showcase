@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.mapping.event.BeforeConvertCallback;
 import org.springframework.data.mongodb.core.mapping.event.BeforeSaveCallback;
 
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class EntityCallbackConfiguration {
 
     @Bean
