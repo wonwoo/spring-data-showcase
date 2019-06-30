@@ -1,5 +1,6 @@
 package ml.wonwoo.springdatashowcase.order;
 
+import io.vavr.control.Try;
 import lombok.RequiredArgsConstructor;
 import ml.wonwoo.springdatashowcase.data.InitializerData;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,9 @@ public class OrderInitializerData implements InitializerData {
         order.orderPaid();
 
         orderRepository.save(order);
+
+        Try<Order> orderd = orderRepository.findByOrderStatus(OrderStatus.PAID);
+        //
 
     }
 }
