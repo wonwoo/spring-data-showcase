@@ -24,5 +24,4 @@ class OrderEventListener(private val eventRepository: EventRepository) {
         logger.info("Publisher event $order")
 
     }
-
 }

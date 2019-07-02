@@ -6,4 +6,5 @@ interface InitializerData {
 
     @Transactional
     fun initialize()
+
 }

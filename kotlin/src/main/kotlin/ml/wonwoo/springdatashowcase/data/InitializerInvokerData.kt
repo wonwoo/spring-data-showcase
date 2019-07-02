@@ -13,8 +13,10 @@ class InitializerInvokerData(private val initializerData: List<InitializerData>)
 
     @Component
     class NoopInitializerData : InitializerData {
+
         override fun initialize() {
 
         }
+
     }
 }
