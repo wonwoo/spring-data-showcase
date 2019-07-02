@@ -4,14 +4,16 @@ import ml.wonwoo.springdatashowcase.support.Identifier
 import org.springframework.data.domain.AbstractAggregateRoot
 import javax.persistence.*
 
+@Entity
+@Table(name = "ORDERS")
 data class Order(
 
         @EmbeddedId
         @AttributeOverride(name = "id", column = Column(name = "ORDER_ID"))
-        private val identifier: Identifier,
+        private val identifier: Identifier = Identifier(),
 
         @Enumerated(EnumType.STRING)
-        var orderStatus: OrderStatus
+        var orderStatus: OrderStatus = OrderStatus.NONE
 
 ) : AbstractAggregateRoot<Order>() {
 
