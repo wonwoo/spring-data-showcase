@@ -3,12 +3,15 @@ package ml.wonwoo.springdatashowcase.product
 import ml.wonwoo.springdatashowcase.data.InitializerData
 import ml.wonwoo.springdatashowcase.support.USD
 import ml.wonwoo.springdatashowcase.support.getTotal
+import ml.wonwoo.springdatashowcase.support.logger
 import org.javamoney.moneta.Money
 import org.springframework.stereotype.Component
 
 @Component
 class ProductInitializerData(private val bookCatalog: BookCatalog,
                              private val discCatalog: DiscCatalog) : InitializerData {
+
+    val logger = logger<ProductInitializerData>()
 
     override fun initialize() {
 
@@ -26,12 +29,11 @@ class ProductInitializerData(private val bookCatalog: BookCatalog,
 
         val books = bookCatalog.findByAuthor("Joshua Bloch")
 
-        println(books.getTotal())
+        logger.info("${books.getTotal()}")
 
         val discs = discCatalog.findByGenre("Sci-Fi")
 
-        println(discs.getTotal())
-
+        logger.info("${discs.getTotal()}")
 
     }
 

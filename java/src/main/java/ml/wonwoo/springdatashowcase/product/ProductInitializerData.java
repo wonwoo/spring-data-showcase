@@ -1,5 +1,6 @@
 package ml.wonwoo.springdatashowcase.product;
 
+import lombok.extern.slf4j.Slf4j;
 import ml.wonwoo.springdatashowcase.data.InitializerData;
 import ml.wonwoo.springdatashowcase.product.Book.BookType;
 import ml.wonwoo.springdatashowcase.product.Disc.DiscType;
@@ -11,6 +12,7 @@ import javax.money.MonetaryAmount;
 import static ml.wonwoo.springdatashowcase.support.Currencies.USD;
 
 @Component
+@Slf4j
 public class ProductInitializerData implements InitializerData {
 
     private final BookCatalog bookCatalog;
@@ -38,7 +40,7 @@ public class ProductInitializerData implements InitializerData {
 
         Books authors = bookCatalog.findByAuthor("Joshua Bloch");
         MonetaryAmount total = authors.getTotal();
-        System.out.println(total);
+        log.info("{}", total);
 
     }
 }

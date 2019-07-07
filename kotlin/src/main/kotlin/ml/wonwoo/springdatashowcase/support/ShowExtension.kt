@@ -15,6 +15,6 @@ inline fun <reified T> logger(): Logger {
 
 fun List<Product>.getTotal(): MonetaryAmount {
 
-    return this.map { it.price }.reduce ( MonetaryAmount::add )
+    return this.map { it.price }.fold(ZERO, MonetaryAmount::add)
 
 }
