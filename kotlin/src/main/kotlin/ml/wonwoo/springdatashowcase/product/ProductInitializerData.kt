@@ -7,7 +7,8 @@ import org.javamoney.moneta.Money
 import org.springframework.stereotype.Component
 
 @Component
-class ProductInitializerData(private val bookCatalog: BookCatalog) : InitializerData {
+class ProductInitializerData(private val bookCatalog: BookCatalog,
+                             private val discCatalog: DiscCatalog) : InitializerData {
 
     override fun initialize() {
 
@@ -20,9 +21,17 @@ class ProductInitializerData(private val bookCatalog: BookCatalog) : Initializer
         bookCatalog.save(Book("Back to the Future", "http://localhost:8080",
                 "Michael Klastorin", Money.of(6.99, USD), BookType.FANTASY))
 
+        discCatalog.save(Disc("Back to the Future", "http://localhost:8080",
+                "Sci-Fi", Money.of(5.99, USD), DiscType.BLURAY))
+
         val books = bookCatalog.findByAuthor("Joshua Bloch")
 
         println(books.getTotal())
+
+        val discs = discCatalog.findByGenre("Sci-Fi")
+
+        println(discs.getTotal())
+
 
     }
 
