@@ -1,8 +1,8 @@
 package ml.wonwoo.springdatashowcase.product
 
 import ml.wonwoo.springdatashowcase.data.InitializerData
-import ml.wonwoo.springdatashowcase.extensions.getTotal
 import ml.wonwoo.springdatashowcase.support.USD
+import ml.wonwoo.springdatashowcase.support.getTotal
 import org.javamoney.moneta.Money
 import org.springframework.stereotype.Component
 
