@@ -24,8 +24,8 @@ class ProductInitializerData(private val bookCatalog: BookCatalog,
         bookCatalog.save(Book("Back to the Future", Money.of(6.99, USD),
             "http://localhost:8080", "Michael Klastorin", BookType.FANTASY))
 
-        discCatalog.save(Disc("Back to the Future", "http://localhost:8080",
-            "Sci-Fi", Money.of(5.99, USD), DiscType.BLURAY))
+        discCatalog.save(Disc("Back to the Future", Money.of(5.99, USD),
+            "http://localhost:8080", "Sci-Fi", DiscType.BLURAY))
 
         val books = bookCatalog.findByAuthor("Joshua Bloch")
 
