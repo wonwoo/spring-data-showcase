@@ -11,12 +11,16 @@ class EntityCallbackConfiguration {
 
     @Bean
     fun beforeSaveCallback(): BeforeSaveCallback<Event> {
+
         return BeforeSaveCallback { entity, _, _ -> entity }
+
     }
 
     @Bean
     fun beforeConvertCallback(): BeforeConvertCallback<Event> {
+
         return BeforeConvertCallback { entity, _ -> entity }
+
     }
 
 }

@@ -9,11 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document
 @Document
 data class Event(
 
-        @Id val id: String? = null,
+    @Id val id: String? = null,
 
-        val orderId: String,
+    val orderId: String,
 
-        val orderStatus: OrderStatus
+    val orderStatus: OrderStatus
 
 ) {
 

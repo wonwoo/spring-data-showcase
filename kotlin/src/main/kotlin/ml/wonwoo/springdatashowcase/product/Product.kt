@@ -11,12 +11,13 @@ import javax.persistence.MappedSuperclass
 @MappedSuperclass
 open class Product(
 
-        @EmbeddedId
-        @AttributeOverride(name = "id", column = Column(name = "PRODUCT_ID"))
-        val productIdentifier: Identifier = Identifier(),
+    @EmbeddedId
+    @AttributeOverride(name = "id", column = Column(name = "PRODUCT_ID"))
+    val productIdentifier: Identifier = Identifier(),
 
-        open val name: String,
+    open val name: String,
 
-        open val price: MonetaryAmount
+    open val price: MonetaryAmount
+
 )
 

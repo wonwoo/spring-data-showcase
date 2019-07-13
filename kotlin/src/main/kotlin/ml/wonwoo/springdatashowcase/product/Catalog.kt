@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.repository.NoRepositoryBean
 
 @NoRepositoryBean
-interface Catalog<T: Product> :JpaRepository<T, Identifier> {
+interface Catalog<T : Product> : JpaRepository<T, Identifier> {
 
-    fun findByName(name: String) : List<T>
+    fun findByName(name: String): List<T>
 
 }

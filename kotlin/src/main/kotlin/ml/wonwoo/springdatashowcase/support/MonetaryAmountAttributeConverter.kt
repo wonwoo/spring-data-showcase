@@ -1,6 +1,6 @@
 package ml.wonwoo.springdatashowcase.support
 
-import java.util.*
+import java.util.Locale
 import javax.money.MonetaryAmount
 import javax.money.format.MonetaryFormats
 import javax.persistence.AttributeConverter

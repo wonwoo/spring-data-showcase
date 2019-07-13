@@ -17,6 +17,5 @@ class InitializerInvokerData(private val initializerData: List<InitializerData>)
         override fun initialize() {
 
         }
-
     }
 }

@@ -8,12 +8,12 @@ import javax.persistence.*
 @Table(name = "ORDERS")
 data class Order(
 
-        @EmbeddedId
-        @AttributeOverride(name = "id", column = Column(name = "ORDER_ID"))
-        private val identifier: Identifier = Identifier(),
+    @EmbeddedId
+    @AttributeOverride(name = "id", column = Column(name = "ORDER_ID"))
+    private val identifier: Identifier = Identifier(),
 
-        @Enumerated(EnumType.STRING)
-        var orderStatus: OrderStatus = OrderStatus.NONE
+    @Enumerated(EnumType.STRING)
+    var orderStatus: OrderStatus = OrderStatus.NONE
 
 ) : AbstractAggregateRoot<Order>() {
 
