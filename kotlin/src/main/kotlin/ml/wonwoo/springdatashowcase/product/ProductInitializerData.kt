@@ -35,6 +35,13 @@ class ProductInitializerData(private val bookCatalog: BookCatalog,
 
         logger.info("${discs.getTotal()}")
 
+        val bookNames = bookCatalog.findName("Effective Java")
+
+        logger.info("$bookNames")
+
+        val bookNames2 = bookCatalog.findByName("Effective Java")
+
+        logger.info("$bookNames2")
     }
 
 }
