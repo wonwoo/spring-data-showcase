@@ -1,8 +1,5 @@
 package ml.wonwoo.springdatashowcase.order;
 
-import ml.wonwoo.springdatashowcase.order.Order;
-import ml.wonwoo.springdatashowcase.order.OrderRepository;
-import ml.wonwoo.springdatashowcase.order.OrderStatus;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.TestConstructor;
@@ -10,7 +7,7 @@ import org.springframework.test.context.TestConstructor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@TestConstructor(autowire = true)
+@TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 class OrderRepositoryTests {
 
     private final OrderRepository orderRepository;
