@@ -12,13 +12,19 @@ class MonetaryAmountAttributeConverter : AttributeConverter<MonetaryAmount, Stri
     private val format = MonetaryFormats.getAmountFormat(Locale.ROOT)
 
     override fun convertToDatabaseColumn(amount: MonetaryAmount?): String? {
+
         return amount?.toString()
+
     }
 
     override fun convertToEntityAttribute(source: String?): MonetaryAmount? {
 
-        return if (source == null) null else format.parse(source)
+        return when (source) {
 
+            null -> ZERO
+
+            else -> format.parse(source)
+
+        }
     }
-
 }
