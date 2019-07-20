@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component
 @Component
 class OrderEventListener(private val eventRepository: EventRepository) {
 
-    companion object {
-        val logger = logger<OrderEventListener>()
-    }
+    val logger = logger<OrderEventListener>()
 
     @EventListener
     fun orderPaid(orderPaid: OrderPaid) {

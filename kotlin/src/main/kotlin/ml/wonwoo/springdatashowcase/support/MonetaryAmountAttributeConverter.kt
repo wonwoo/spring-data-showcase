@@ -19,11 +19,9 @@ class MonetaryAmountAttributeConverter : AttributeConverter<MonetaryAmount, Stri
 
     override fun convertToEntityAttribute(source: String?): MonetaryAmount? {
 
-        return when (source) {
+        return source?.let {
 
-            null -> ZERO
-
-            else -> format.parse(source)
+            format.parse(it)
 
         }
     }

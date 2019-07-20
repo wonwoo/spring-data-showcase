@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component
 class InitializerInvokerData(private val initializerData: List<InitializerData>) : ApplicationRunner {
 
     override fun run(args: ApplicationArguments?) {
-        initializerData.forEach { it.initialize() }
+
+        initializerData.forEach(InitializerData::initialize)
+
     }
 
     @Component
